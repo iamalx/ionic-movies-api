@@ -1,0 +1,8 @@
+{
+  "name": "pairMovie",
+  "app_id": "4aeba240",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
