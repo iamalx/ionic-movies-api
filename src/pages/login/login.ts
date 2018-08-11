@@ -21,4 +21,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+  tabsPage() {
+    console.log('nav to homepage and wipe stack')
+  }
+
 }
