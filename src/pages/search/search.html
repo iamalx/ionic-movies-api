@@ -1,0 +1,25 @@
+<!--
+  Generated template for the SearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   <ion-toolbar color="primary">
+    <ion-searchbar #info (keyup.enter)="onSearch(info.value)"></ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-list-header>
+        categories
+    </ion-list-header>
+    <ion-list>
+        <button ion-item *ngFor="let item of categories" (click)="itemSelected(item)">
+          {{ item }}
+        </button>  
+      </ion-list>
+
+</ion-content>
