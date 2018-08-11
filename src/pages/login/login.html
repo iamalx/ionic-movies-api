@@ -4,10 +4,12 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+
+<!--
 <ion-header>
 
   <ion-navbar>
-    <ion-title>login</ion-title>
+    <ion-title>LOGIN</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,6 +20,53 @@
   <p>Create "dummy" login page, on submit: navigate to Tabs Page, the page stack should "reset" at this point.</p>
   <p>Capture name for display</p>
 
-  <button ion-button large color="dark" round outline (click)="tabsPage()">Submit</button>
+  <ion-item>
+    <ion-label color="soft-grey"><ion-icon name="mail" item-left></ion-icon></ion-label>
+    <ion-input placeholder="User Email"></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label color="soft-grey"><ion-icon name="lock" item-left></ion-icon></ion-label>
+    <ion-input type="tel" placeholder="Password"></ion-input>
+  </ion-item>
+
+  <button ion-button color="dark" round outline (click)="tabsPage()">Submit</button>
+
+</ion-content>
+-->
+<ion-content>
+
+  <ion-header>
+
+    <ion-navbar>
+      <ion-title>LOGIN</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+      
+
+  <ion-card>
+
+    <ion-card-header>
+      LOGIN
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>Create "dummy" login page, on submit: navigate to Tabs Page, the page stack should "reset" at this point.</p>
+      <p>Capture name for display</p>
+    
+      <ion-item>
+        <ion-label color="soft-grey"><ion-icon name="mail" item-left></ion-icon></ion-label>
+        <ion-input placeholder="User Email"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="soft-grey"><ion-icon name="lock" item-left></ion-icon></ion-label>
+        <ion-input type="tel" placeholder="Password"></ion-input>
+      </ion-item>
+    
+      <button ion-button color="dark" round outline (click)="tabsPage()">Submit</button>
+    </ion-card-content>
+  
+  </ion-card>
 </ion-content>
