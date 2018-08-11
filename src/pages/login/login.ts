@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the LoginPage page.
@@ -23,6 +24,7 @@ export class LoginPage {
 
   tabsPage() {
     console.log('nav to homepage and wipe stack')
+    this.navCtrl.setRoot(TabsPage);
   }
 
 }
