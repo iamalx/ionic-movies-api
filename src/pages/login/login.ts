@@ -27,7 +27,7 @@ export class LoginPage {
   }
 
   tabsPage() {
-    console.log('nav to homepage and wipe stack')
+    console.log('tabsPage() runs from LoginPage')
     sessionStorage.setItem('name', this.user.name)
     this.navCtrl.setRoot(TabsPage);
   }
