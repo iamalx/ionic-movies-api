@@ -7,18 +7,18 @@
 <ion-header>
 
    <ion-toolbar color="primary">
-    <ion-searchbar #info (keyup.enter)="onSearch(info.value)"></ion-searchbar>
+    <ion-searchbar #info placeholder= 'Search movie titles' (keyup.enter)="onSearch(info.value)"></ion-searchbar>
   </ion-toolbar>
 
 </ion-header>
 
 <ion-content padding>
     <ion-list-header>
-        categories
+        Search by genre
     </ion-list-header>
     <ion-list>
-        <button ion-item *ngFor="let item of categories" (click)="itemSelected(item)">
-          {{ item }}
+        <button ion-item *ngFor="let item of categories; let i = index " (click)="itemSelected(item.id)">
+          {{ item.name }}
         </button>  
       </ion-list>
 
