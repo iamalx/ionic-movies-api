@@ -22,7 +22,7 @@ export class SearchPage {
               public navParams: NavParams) {
   }
 
-  categories: string[] = [
+  categories: any[] = [
     {name:'Action',
     id: "28" }, 
     {name:'Comedy',
