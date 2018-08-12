@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { SearchPage } from '../pages/search/search';
 import { LoginPage } from '../pages/login/login';
 
+import { HeaderMenuComponent} from '../components/header-menu/header-menu';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UserProvider } from '../providers/user/user';
@@ -23,7 +25,8 @@ import { UserProvider } from '../providers/user/user';
     HomePage,
     TabsPage,
     SearchPage,
-    LoginPage
+    LoginPage,
+    HeaderMenuComponent
   ],
   imports: [
     BrowserModule,
