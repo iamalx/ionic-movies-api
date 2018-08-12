@@ -15,6 +15,10 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 
+  user: any = {
+    name: ''
+  }
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -24,6 +28,7 @@ export class LoginPage {
 
   tabsPage() {
     console.log('nav to homepage and wipe stack')
+    sessionStorage.setItem('name', this.user.name)
     this.navCtrl.setRoot(TabsPage);
   }
 
