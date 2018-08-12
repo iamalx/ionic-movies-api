@@ -17,9 +17,27 @@
             {{movieTitles[i]}}
             </ion-card-title>
           <p>
-            The most popular industrial group ever, and largely
-            responsible for bringing the music to a mass audience.
+            {{overviewArray[i]}}
           </p>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-start clear small>
+                <ion-icon name="star"></ion-icon>
+                <div>Favorite</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-start clear small>
+                <ion-icon name="share-alt"></ion-icon>
+                <div>Share</div>
+              </button>
+            </ion-col>
+            <ion-col  text-end>
+              <ion-note>
+                Rating:{{ratingArray[i]}}
+              </ion-note>
+            </ion-col>
+          </ion-row>
         </ion-card-content>
       </ion-card>
 </ion-content>

@@ -13,7 +13,7 @@ export class HomePage {
               public navParam: NavParams, 
               public _user: UserProvider) {
   }
-  ionViewWillEnter() {
+  ionViewDidLoad() {
     this.searchValue = this.navParam.get('item')
     console.log(this.searchValue, "WillEnter")
     this.displayMovies(this.searchValue);
@@ -23,18 +23,22 @@ export class HomePage {
   mainPropData: any;
   movieTitles: any[] = [];
   imagesArray: any[] = [];
+  overviewArray: any[] = []; 
+  ratingArray: any[] = [];
   displayMovies(inqury) {
     this._user.getData(inqury).
     subscribe( data => {
-      this.mainPropData = data.results;
-     // console.log(this.mainPropData, 'mainPRop');
+      this.mainPropData = data['results'];
+      console.log(this.mainPropData, 'mainPRop');
       this.mainPropData.forEach( element => {
       this.movieTitles.push(element.title);
-      //console.log(this.movieTitles, "elementTitle");
-      this.imagesArray.push(element.backdrop_path);
-      //console.log(this.imagesArray);
-     
+      this.imagesArray.push(`https://image.tmdb.org/t/p/original/${element.backdrop_path}`);
+      this.overviewArray.push(element.overview);    
+      this.ratingArray.push(element.vote_average)
      })
+     //console.log(this.movieTitles, "elementTitle");
+     //console.log(this.imagesArray);
+     console.log(this.overviewArray, "descrip");
     });   
   }
   onSearch() {
