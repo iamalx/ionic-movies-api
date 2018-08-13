@@ -18,7 +18,11 @@ export class HomePage {
     console.log(this.searchValue, "WillEnter")
     this.displayMovies(this.searchValue);
   }
-  
+  ionViewWillEnter() {
+    this.name = sessionStorage.getItem('name') 
+  }
+  name: any = ''
+
   searchValue: any;
   mainPropData: any;
   movieTitles: any[] = [];

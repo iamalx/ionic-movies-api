@@ -2,9 +2,14 @@
   <ion-navbar>
     <ion-title text-center>MovieApp</ion-title>
     <ion-buttons left>
+      <div *ngIf = "name">
+        <header-menu></header-menu>
+      </div>
+      <!-- Working on menu with logout option...
       <button ion-button icon-only menuToggle>
         <ion-icon name='menu'></ion-icon>
       </button>
+      -->
     </ion-buttons>
     <ion-buttons end>
       <button ion-button icon-only (click)="onSearch()">
