@@ -14,11 +14,13 @@ export class HomePage {
               public _user: UserProvider) {
   }
   ionViewWillEnter() {
+    this.name = sessionStorage.getItem('name')
     this.searchValue = this.navParam.get('item')
     console.log(this.searchValue, "WillEnter")
     this.displayMovies(this.searchValue);
   }
-  
+  name: any = ''
+
   searchValue: any;
   mainPropData: any;
   movieTitles: any[] = [];
