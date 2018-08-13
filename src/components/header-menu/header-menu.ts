@@ -23,6 +23,7 @@ export class HeaderMenuComponent {
   }
 
   logout() {
+    sessionStorage.removeItem('name')
     this.presentToast()
   }
 
