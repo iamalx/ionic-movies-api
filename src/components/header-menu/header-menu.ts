@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ToastController } from 'ionic-angular';
-import { LoginPage } from '../../pages/login/login';
+import { NavController, ToastController } from 'ionic-angular';
+//import { LoginPage } from '../../pages/login/login';
+import { HomePage } from '../../pages/home/home';
 
 /**
  * Generated class for the HeaderMenuComponent component.
@@ -24,19 +24,19 @@ export class HeaderMenuComponent {
 
   logout() {
     this.presentToast()
-    this.navCtrl.setRoot(LoginPage)
   }
 
   
   presentToast() {
     let toast = this.toastCtrl.create({
       message: 'You are logged out',
-      duration: 2000,
+      duration: 1000,
       position: 'top'
     });
   
     toast.onDidDismiss(() => {
       console.log('Dismissed toast');
+      this.navCtrl.setRoot(HomePage)
     });
   
     toast.present();

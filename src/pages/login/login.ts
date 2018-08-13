@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ToastController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 
 /**
@@ -19,7 +19,7 @@ export class LoginPage {
     name: ''
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -29,7 +29,22 @@ export class LoginPage {
   tabsPage() {
     console.log('tabsPage() runs from LoginPage')
     sessionStorage.setItem('name', this.user.name)
-    this.navCtrl.setRoot(TabsPage);
+    this.presentToast()
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'You are logged in',
+      duration: 1000,
+      position: 'top'
+    });
+  
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+      this.navCtrl.setRoot(TabsPage)
+    });
+  
+    toast.present();
   }
 
 }
