@@ -34,7 +34,7 @@ export class LoginPage {
 
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'You are logged in',
+      message: 'You are logged in ' + this.user.name + '!',
       duration: 1000,
       position: 'top'
     });

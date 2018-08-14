@@ -22,15 +22,16 @@ export class HeaderMenuComponent {
     this.text = 'Hello World';
   }
 
+  name = sessionStorage.getItem('name')
+
   logout() {
-    sessionStorage.removeItem('name')
     this.presentToast()
   }
 
   
   presentToast() {
     let toast = this.toastCtrl.create({
-      message: 'You are logged out',
+      message: 'Bye ' + this.name + '!',
       duration: 1000,
       position: 'top'
     });
@@ -41,6 +42,7 @@ export class HeaderMenuComponent {
     });
   
     toast.present();
+    sessionStorage.removeItem('name')
   }
   
 
