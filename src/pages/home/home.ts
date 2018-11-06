@@ -21,28 +21,25 @@ export class HomePage {
   ionViewWillEnter() {
     this.name = sessionStorage.getItem('name') 
   }
-  name: any = ''
 
+  name: any = '';
   searchValue: any;
   mainPropData: any;
   movieTitles: any[] = [];
   imagesArray: any[] = [];
   overviewArray: any[] = []; 
   ratingArray: any[] = [];
+
   displayMovies(inqury) {
     this._user.getData(inqury).
     subscribe( data => {
       this.mainPropData = data['results'];
-      console.log(this.mainPropData, 'mainPRop');
       this.mainPropData.forEach( element => {
       this.movieTitles.push(element.title);
       this.imagesArray.push(`https://image.tmdb.org/t/p/original/${element.backdrop_path}`);
       this.overviewArray.push(element.overview);    
       this.ratingArray.push(element.vote_average)
      })
-     //console.log(this.movieTitles, "elementTitle");
-     //console.log(this.imagesArray);
-     console.log(this.overviewArray, "descrip");
     });   
   }
   onSearch() {

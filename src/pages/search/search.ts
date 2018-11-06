@@ -23,36 +23,51 @@ export class SearchPage {
   }
 
   categories: any[] = [
-    {name:'Action',
-    id: "28" }, 
-    {name:'Comedy',
-    id: "35" }, 
-    {name:'Drama',
-    id: "18" },
-    {name:'Family',
-    id: "10751" },
-    {name:'Horror',
-    id: "27" },
-    {name:'Mistery',
-    id: "9648" },
-    {name:'Romance',
-    id: "10749" }, 
-    {name:'Science Fiction',
-    id: "878" }, 
-    {name:'Thriller',
-    id: "53" }
+    {
+      name:'Action',
+      id: "28" 
+    },
+    {
+      name:'Comedy',
+      id: "35"
+    }, 
+    {
+      name:'Drama',
+      id: "18"
+    },
+    {
+      name:'Family',
+      id: "10751"
+    },
+    {
+      name:'Horror',
+      id: "27"
+    },
+    {
+      name:'Mistery',
+      id: "9648"
+    },
+    {
+      name:'Romance',
+      id: "10749"
+    }, 
+    {
+      name:'Science Fiction',
+      id: "878"
+    }, 
+    {
+      name:'Thriller',
+      id: "53"
+    }
   ]
 
   itemSelected(item) {
     this._user.isSearch = false;
     this.navCtrl.setRoot(HomePage, {item: item});
-    console.log(item, "itemSlected()");
-    
   }
 
   i: any; 
   onSearch(value1) {
-    console.log(value1, "onSearch()");
     this._user.isSearch = true;
     this.navCtrl.setRoot(HomePage, {item: value1});
   }

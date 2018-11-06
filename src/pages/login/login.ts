@@ -19,15 +19,15 @@ export class LoginPage {
     name: ''
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private toastCtrl: ToastController) {
-  }
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private toastCtrl: ToastController) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
   tabsPage() {
-    console.log('tabsPage() runs from LoginPage')
     sessionStorage.setItem('name', this.user.name)
     this.presentToast()
   }
